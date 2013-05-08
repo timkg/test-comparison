@@ -6,13 +6,8 @@ A comparison of various assertion libraries, test frameworks, and test runners. 
 ## test/node-assert
 Only using node's plain assert module. No setup, no watcher, no runner, no config, no reporter.
 
-### Approach
-Include everything you need in a file and act upon your production code. Make assertions using [node's assert module](http://nodejs.org/api/assert.html).
+- **Approach:** Include everything you need in a file and act upon your production code. Make assertions using [node's assert module](http://nodejs.org/api/assert.html).
 
-### What do we get
-A failed assertion will throw an AssertionError and thus kill the node process. The callstack is logged to the console.
+- **What do we get:** A failed assertion will throw an AssertionError and thus kill the node process. The callstack is logged to the console.
 
-### Thoughts
-The total lack of positive feedback when all assertions pass is troubling.
-The test file quickly degrades into a total mess.
-Constantly switching to the terminal to run "node test.js" is distracting.
+- **Thoughts:** The total lack of positive feedback when all assertions pass is troubling. The test file quickly degrades into a total mess. Constantly switching to the terminal to run "node test.js" is distracting.
