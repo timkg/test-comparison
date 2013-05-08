@@ -21,9 +21,13 @@ var listener = {
 
 listener.listen();
 
+exports.setUp = function(done) {
+	messages = [];
+	done();
+};
 
 exports.test_listenersReactToEvents = function(test) {
-	emitter.emit('my name is emitter');
+	emitter.emit();
 	test.equal(listener.timesBeingCalled, 1);
 	test.done();
 };
