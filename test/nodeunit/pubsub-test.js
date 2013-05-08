@@ -33,3 +33,10 @@ exports.test_publishersCanPassArgumentsToListeners = function(test) {
 	test.equal(messages[0], 'my name is emitter');
 	test.done();
 };
+
+exports.test_throwsErrorWhenSubscriberIsNotAFunction = function(test) {
+	test.throws(function() {
+		pubsub.subscribe('message', {}, {});
+	});
+	test.done();
+};

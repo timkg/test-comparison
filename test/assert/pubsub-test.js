@@ -52,3 +52,7 @@ model.changed();
 // first view reacted twice, second once
 assert.equal(elm, 'view1modelview1model', 'listener called twice when event published twice');
 assert.equal(anotherElm, 'view2model', 'we can register more than one subscriber for a single event');
+
+assert.throws(function() {
+	pub.subscribe('message', {}, {});
+});
