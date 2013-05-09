@@ -14,7 +14,7 @@ Only using node's plain assert module. No setup, no watcher, no runner, no confi
 
 ## test/nodeunit
 Using nodeunit to test dom-independent functionality. Nodeunit uses node's assert module, but gives us some additional functionality.
-- **Approach:** <code>npm install nodeunit</code>. Require nodeunit in your test files. Write each test as an <code>export</code> function. Pass 'test' as arg to those functions. Use node's assert methods, but as instance methods of <code>test</code>, not <code>assert</code>. There is no need to <code>require('assert')</code>. Call <code>test.done()</code> at the end of each test function. Install node's command-line reporter by going to its node_modules folder and running <code>sudo make install</code>. Run the runner via <code>nodeunit testfile.js</code>.
+- **Approach:** <code>npm install nodeunit</code>. No need to require nodeunit in your test files. Write each test as an <code>export</code> function. Pass 'test' as arg to those functions. Use node's assert methods, but as instance methods of <code>test</code>, not <code>assert</code>. There is no need to <code>require('assert')</code>. Call <code>test.done()</code> at the end of each test function. Install node's command-line reporter by going to its node_modules folder and running <code>sudo make install</code>. Run the runner via <code>nodeunit testfile.js</code>. If you define setUp and tearDown methods, accept some randomly named argument (I use "done"), and call it when done.
 
 - **What do we get:** a way to structure our test files. A reporter with feedback about successes and failures. A way to handle async tests via the test.done callback - not yet exemplified here.
 
